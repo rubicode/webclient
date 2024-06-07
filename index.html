@@ -84,10 +84,10 @@
                             <td>${index + 1}</td>
                             <td>${item.email}</td>
                             <td>${item.name}</td>
-                            <td>${item.Todos.map(i => i.title)}</td>
+                            <td>${item.todos.map(i => i.title)}</td>
                             <td>
                                 <button type="button" class="btn btn-success" onclick='editUser(${JSON.stringify(item)})'>Edit</button>
-                                <button type="button" class="btn btn-danger" onclick="removeUser(${item.id})">Delete</button>
+                                <button type="button" class="btn btn-danger" onclick="removeUser(${item._id})">Delete</button>
                             </td>
                         </tr>
                     `
@@ -137,7 +137,7 @@
         }
 
         function editUser(user) {
-            document.getElementById('id').value = user.id
+            document.getElementById('id').value = user._id
             document.getElementById('email').value = user.email
             document.getElementById('name').value = user.name
         }
